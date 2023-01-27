@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
-import AddItem from "./AddItem";
 import { ItemsList } from "./ItemsList";
-import SingleItem from "./SingleItem";
+import { SingleItem } from "./SingleItem";
 
 export const App = () => {
   const [items, setItems] = useState([]);
@@ -27,7 +26,6 @@ export const App = () => {
     <main>
       <h1>Item Store</h1>
       <h2>All things 🔥</h2>
-      <AddItem fetchItems={fetchItems} />
       {singleItemId ? (
         <SingleItem
           id={singleItemId}
@@ -35,7 +33,11 @@ export const App = () => {
           fetchItems={fetchItems}
         />
       ) : (
-        <ItemsList items={items} setSingleItemId={setSingleItemId} />
+        <ItemsList
+          items={items}
+          fetchItems={fetchItems}
+          setSingleItemId={setSingleItemId}
+        />
       )}
     </main>
   );

@@ -3,3 +3,52 @@
   box-sizing: border-box;
   background-color: rgb(223, 223, 223);
 }
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  max-width: 300px;
+}
+
+.item img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+#create-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+#create-item form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-item form label {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  align-items: center;
+  margin: 0.5em;
+}
+
+#create-item form label * {
+  margin: 0.25em;
+}

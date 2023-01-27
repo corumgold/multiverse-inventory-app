@@ -3,7 +3,7 @@ import apiURL from "../api";
 import { Item } from "./Item";
 import { EditItem } from "./EditItem";
 
-const SingleItem = ({ id, setSingleItemId, fetchItems }) => {
+export const SingleItem = ({ id, setSingleItemId, fetchItems }) => {
   const [item, setItem] = useState({});
   const [editItemClicked, setEditItemClicked] = useState(false);
 
@@ -55,5 +55,3 @@ const SingleItem = ({ id, setSingleItemId, fetchItems }) => {
     </>
   );
 };
-
-export default SingleItem;

@@ -40,8 +40,9 @@ const AddItem = ({ fetchItems }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
+    <div id="create-item">
+      <h2>Create a New Item</h2>
+      <form>
         <label>
           Title:
           <input type="text" name="title" onChange={handleFormChange} />
@@ -62,8 +63,8 @@ const AddItem = ({ fetchItems }) => {
           Image Url:
           <input type="text" name="image" onChange={handleFormChange} />
         </label>
-        <input type="submit" value="Submit" />
       </form>
+      <button onClick={handleFormSubmit}>Create Item</button>
     </div>
   );
 };

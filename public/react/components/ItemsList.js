@@ -1,16 +1,24 @@
 import React from "react";
+import AddItem from "./AddItem";
 import { Item } from "./Item";
 
-export const ItemsList = ({ items, setSingleItemId }) => {
+export const ItemsList = ({ items, setSingleItemId, fetchItems }) => {
   return (
     <>
-      {items.map((item) => {
-        return (
-          <div onClick={() => setSingleItemId(item.id)} key={item.id}>
-            <Item item={item} />
-          </div>
-        );
-      })}
+      <div className="items">
+        {items.map((item) => {
+          return (
+            <div
+              className="item"
+              onClick={() => setSingleItemId(item.id)}
+              key={item.id}
+            >
+              <Item item={item} />
+            </div>
+          );
+        })}
+      </div>
+      <AddItem fetchItems={fetchItems} />
     </>
   );
 };
