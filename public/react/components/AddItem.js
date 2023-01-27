@@ -37,6 +37,13 @@ const AddItem = ({ fetchItems }) => {
     e.preventDefault();
     postItem();
     fetchItems();
+    setForm({
+      title: "",
+      description: "",
+      price: 0,
+      category: "",
+      image: "",
+    });
   }
 
   return (
@@ -45,23 +52,48 @@ const AddItem = ({ fetchItems }) => {
       <form>
         <label>
           Title:
-          <input type="text" name="title" onChange={handleFormChange} />
+          <input
+            value={form.title}
+            type="text"
+            name="title"
+            onChange={handleFormChange}
+          />
         </label>
         <label>
           Description:
-          <input type="text" name="description" onChange={handleFormChange} />
+          <input
+            value={form.description}
+            type="text"
+            name="description"
+            onChange={handleFormChange}
+          />
         </label>
         <label>
           Price:
-          <input type="number" name="price" onChange={handleFormChange} />
+          <input
+            value={form.price}
+            type="number"
+            name="price"
+            onChange={handleFormChange}
+          />
         </label>
         <label>
           Category:
-          <input type="text" name="category" onChange={handleFormChange} />
+          <input
+            value={form.category}
+            type="text"
+            name="category"
+            onChange={handleFormChange}
+          />
         </label>
         <label>
           Image Url:
-          <input type="text" name="image" onChange={handleFormChange} />
+          <input
+            value={form.image}
+            type="text"
+            name="image"
+            onChange={handleFormChange}
+          />
         </label>
       </form>
       <button onClick={handleFormSubmit}>Create Item</button>
