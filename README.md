@@ -23,7 +23,7 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
   - (DONE) Express Route to GET all Items
   - (DONE) Front-end View for all Items
 - As a User, I want to view any individual item
-  - Express Route to GET one Item
+  - (DONE) Express Route to GET one Item
   - Front-end view for one item (click to see)
 
 ### Tier II: Adding an Item

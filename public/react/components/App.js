@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
 import { ItemsList } from "./ItemsList";
+import SingleItem from "./SingleItem";
 
 export const App = () => {
   const [items, setItems] = useState([]);
@@ -25,6 +26,7 @@ export const App = () => {
       <h1>Item Store</h1>
       <h2>All things 🔥</h2>
       <ItemsList items={items} />
+      {/* {<SingleItem id={1}/>} */}
     </main>
   );
 };
