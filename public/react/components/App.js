@@ -6,6 +6,7 @@ import SingleItem from "./SingleItem";
 
 export const App = () => {
   const [items, setItems] = useState([]);
+  const [singleItemId, setSingleItemId] = useState(null);
 
   async function fetchItems() {
     try {
@@ -25,8 +26,11 @@ export const App = () => {
     <main>
       <h1>Item Store</h1>
       <h2>All things 🔥</h2>
-      <ItemsList items={items} />
-      {/* {<SingleItem id={1}/>} */}
+      {singleItemId ? (
+        <SingleItem id={singleItemId} />
+      ) : (
+        <ItemsList items={items} setSingleItemId={setSingleItemId} />
+      )}
     </main>
   );
 };
