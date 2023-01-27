@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
 import { Item } from "./Item";
-import { EditItem } from "./EditItem";
+import { Form } from "./Form";
 
 export const SingleItem = ({ id, setSingleItemId, fetchItems }) => {
   const [item, setItem] = useState({});
-  const [editItemClicked, setEditItemClicked] = useState(false);
+  const [editItemClicked, setFormClicked] = useState(false);
 
   async function fetchItem() {
     try {
@@ -42,12 +42,12 @@ export const SingleItem = ({ id, setSingleItemId, fetchItems }) => {
     <>
       <button onClick={handleBack}>Back</button>
       <button onClick={deleteItem}>Delete</button>
-      <button onClick={() => setEditItemClicked(true)}>Edit</button>
+      <button onClick={() => setFormClicked(true)}>Edit</button>
       {editItemClicked ? (
-        <EditItem
+        <Form
           item={item}
           fetchItem={fetchItem}
-          setEditItemClicked={setEditItemClicked}
+          setFormClicked={setFormClicked}
         />
       ) : (
         <Item item={item} />

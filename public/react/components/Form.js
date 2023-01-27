@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import apiURL from "../api";
 
-export const EditItem = ({ item, fetchItem, setEditItemClicked }) => {
-  const [form, setForm] = useState(item);
+export const Form = ({ item, fetchItem, setFormClicked, fetchItems }) => {
+  const [form, setForm] = useState({
+    title: "",
+    description: "",
+    price: 0,
+    category: "",
+    image: "",
+  });
 
-  async function updateItem() {
+  const method = item ? "PUT" : "POST";
+  const fetchUrl = item ? `${apiURL}/items/${item.id}` : `${apiURL}/items/`;
+
+  async function updateOrPostItem() {
     try {
-      await fetch(`${apiURL}/items/${item.id}`, {
+      await fetch(fetchUrl, {
         //these are extra settings (default is method: GET)
-        method: "PUT",
+        method,
         //what type of data are we expecting? json!
         headers: {
           "Content-Type": "application/json",
@@ -29,14 +38,32 @@ export const EditItem = ({ item, fetchItem, setEditItemClicked }) => {
 
   async function handleFormSubmit(e) {
     e.preventDefault();
-    await updateItem();
-    fetchItem();
-    setEditItemClicked();
+    await updateOrPostItem();
+    if (method === "PUT") {
+      fetchItem();
+      setFormClicked();
+    } else {
+      fetchItems();
+      setForm({
+        title: "",
+        description: "",
+        price: 0,
+        category: "",
+        image: "",
+      });
+    }
   }
 
+  useEffect(() => {
+    if (item) {
+      setForm(item);
+    }
+  }, []);
+
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
+    <div id="create-item">
+      <h2>{item ? "Edit Item" : "Create a New Item"}</h2>
+      <form>
         <label>
           Title:
           <input
@@ -82,8 +109,10 @@ export const EditItem = ({ item, fetchItem, setEditItemClicked }) => {
             onChange={handleFormChange}
           />
         </label>
-        <input type="submit" value="Submit" />
       </form>
+      <button onClick={handleFormSubmit}>
+        {item ? "Edit Item" : "Create a New Item"}
+      </button>
     </div>
   );
 };

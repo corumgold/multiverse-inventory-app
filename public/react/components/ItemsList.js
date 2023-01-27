@@ -1,5 +1,6 @@
 import React from "react";
 import AddItem from "./AddItem";
+import { Form } from "./Form";
 import { Item } from "./Item";
 
 export const ItemsList = ({ items, setSingleItemId, fetchItems }) => {
@@ -18,7 +19,7 @@ export const ItemsList = ({ items, setSingleItemId, fetchItems }) => {
           );
         })}
       </div>
-      <AddItem fetchItems={fetchItems} />
+      <Form fetchItems={fetchItems} />
     </>
   );
 };
