@@ -29,7 +29,11 @@ export const App = () => {
       <h2>All things 🔥</h2>
       <AddItem fetchItems={fetchItems} />
       {singleItemId ? (
-        <SingleItem id={singleItemId} setSingleItemId={setSingleItemId} />
+        <SingleItem
+          id={singleItemId}
+          setSingleItemId={setSingleItemId}
+          fetchItems={fetchItems}
+        />
       ) : (
         <ItemsList items={items} setSingleItemId={setSingleItemId} />
       )}

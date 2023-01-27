@@ -27,16 +27,16 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
   - (DONE) Front-end view for one item (click to see)
 
 ### Tier II: Adding an Item
-- As a User, I want to add an item by completing a form
+- (DONE) As a User, I want to add an item by completing a form
   - (DONE) Add Item front-end form
   - (DONE) Express Route to ADD the Item
   - (DONE) Form or Fetch request to add item when form is submitted
 
 ### Tier III: Deleting an Item
-- As a User, I want to  remove an item from inventory
-  - Delete button on Single Item View
-  - Express Route to DELETE the Item
-  - Fetch request to delete item when button is clicked
+- (DONE) As a User, I want to  remove an item from inventory
+  - (DONE) Delete button on Single Item View
+  - (DONE) Express Route to DELETE the Item
+  - (DONE) Fetch request to delete item when button is clicked
 
 ### Tier IV: Updating an Item
 - As a User, I want to edit an item by filling a form
