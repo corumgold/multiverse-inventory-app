@@ -40,9 +40,9 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 
 ### Tier IV: Updating an Item
 - As a User, I want to edit an item by filling a form
-  - Edit form on Single Item View
-  - Express Route to UPDATE the Item
-  - Fetch request to update item when form is submitted
+  - (DONE) Edit form on Single Item View
+  - (DONE) Express Route to UPDATE the Item
+  - (DONE) Fetch request to update item when form is submitted
 
 ### Tier V: Bonus Stuff
 - Models, Routes for Users and Orders
