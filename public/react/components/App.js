@@ -27,7 +27,7 @@ export const App = () => {
       <h1>Item Store</h1>
       <h2>All things 🔥</h2>
       {singleItemId ? (
-        <SingleItem id={singleItemId} />
+        <SingleItem id={singleItemId} setSingleItemId={setSingleItemId} />
       ) : (
         <ItemsList items={items} setSingleItemId={setSingleItemId} />
       )}

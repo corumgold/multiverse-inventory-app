@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import apiURL from "../api";
 import { Item } from "./Item";
 
-const SingleItem = ({ id }) => {
+const SingleItem = ({ id, setSingleItemId }) => {
   const [item, setItem] = useState({});
   async function fetchItem() {
     try {
@@ -13,12 +13,17 @@ const SingleItem = ({ id }) => {
       console.log("Oh no an error! ", err);
     }
   }
-    
+
   useEffect(() => {
     fetchItem();
   }, []);
 
-  return <Item item={item} />;
+  return (
+    <>
+      <button onClick={() => setSingleItemId(null)}>Back</button>
+      <Item item={item} />
+    </>
+  );
 };
 
 export default SingleItem;
