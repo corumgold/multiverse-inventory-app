@@ -27,7 +27,7 @@ export const App = () => {
     <main>
       <h1>Item Store</h1>
       <h2>All things 🔥</h2>
-      <AddItem />
+      <AddItem fetchItems={fetchItems} />
       {singleItemId ? (
         <SingleItem id={singleItemId} setSingleItemId={setSingleItemId} />
       ) : (

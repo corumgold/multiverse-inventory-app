@@ -28,7 +28,7 @@ Your team should strive to finish at least the first 4 tiers (a CRUD application
 
 ### Tier II: Adding an Item
 - As a User, I want to add an item by completing a form
-  - Add Item front-end form
+  - (DONE) Add Item front-end form
   - Express Route to ADD the Item
   - Form or Fetch request to add item when form is submitted
 
