@@ -30,6 +30,16 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+router.put("/:id", async (req, res, next) => {
+  try {
+    const item = await Item.findByPk(req.params.id);
+    const updatedItem = await item.update(req.body);
+    res.send(updatedItem);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.delete("/:id", async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.id);
