@@ -17,14 +17,14 @@ The tiers describe different levels of functionality in your application with th
 Your team should strive to finish at least the first 4 tiers (a CRUD application) and attempt some of the bonus material.
 
 ### Tier I: MVP Application
-- As a User, I want to view all items in inventory
+- (DONE) As a User, I want to view all items in inventory
   - (DONE) Sequelize Model for Item
   - (DONE) Name, Description, Price, Category, Image
   - (DONE) Express Route to GET all Items
   - (DONE) Front-end View for all Items
 - As a User, I want to view any individual item
   - (DONE) Express Route to GET one Item
-  - Front-end view for one item (click to see)
+  - (DONE) Front-end view for one item (click to see)
 
 ### Tier II: Adding an Item
 - As a User, I want to add an item by completing a form
