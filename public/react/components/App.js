@@ -4,6 +4,7 @@ import apiURL from "../api";
 import { ItemsList } from "./ItemsList";
 import { SingleItem } from "./SingleItem";
 
+
 export const App = () => {
   const [items, setItems] = useState([]);
   const [singleItemId, setSingleItemId] = useState(null);
@@ -24,8 +25,8 @@ export const App = () => {
 
   return (
     <main>
-      <h1>Item Store</h1>
-      <h2>All things 🔥</h2>
+      <h1 id="main-title">Cory's Accoutrements</h1>
+      <h2 id="main-description">A little of this, a little of that - this place is where it's at!</h2>
       {singleItemId ? (
         <SingleItem
           id={singleItemId}
