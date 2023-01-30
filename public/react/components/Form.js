@@ -113,6 +113,7 @@ export const Form = ({ item, fetchItem, setFormClicked, fetchItems }) => {
       <button onClick={handleFormSubmit}>
         {item ? "Edit Item" : "Create a New Item"}
       </button>
+      <div>Image Preview</div><img src={form.image} alt={form.name} />
     </div>
   );
 };
